@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:backgroundTint="@android:color/background_dark"
+    android:minHeight="112dp"
+    tools:context="com.example.nil.calculatrice.MainActivity"
+    tools:layout_editor_absoluteY="89dp">
+
+
+    <TextView
+        android:id="@+id/idtext"
+        android:layout_width="281dp"
+        android:layout_height="170dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="right"
+        android:text="0"
+        android:textColor="#fff"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.072" />
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridLayout"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:columnCount="4"
+        android:rowCount="4"
+        app:layout_constraintBottom_toTopOf="@+id/id_OtherButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/id_ac"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_claire"
+            android:gravity="center"
+            android:text="AC"
+            android:textColor="#000"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/id_negatif"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_claire"
+            android:gravity="center"
+            android:text="+/-"
+            android:textColor="#000"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_pourcentage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_claire"
+            android:gravity="center"
+            android:text="%"
+            android:textColor="#000"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_division"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_orange"
+            android:gravity="center"
+            android:text="÷"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text="7"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_9"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text="9"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_multiplier"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_orange"
+            android:gravity="center"
+            android:text="x"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text="6"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_moins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_orange"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_orange"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/id_OtherButtons"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <Button
+            android:id="@+id/id_0"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttom_0"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_virgule"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_gris_foncer"
+            android:gravity="center"
+            android:text=","
+            android:textColor="#fff"
+            android:textSize="40dp" />
+
+        <Button
+            android:id="@+id/id_egale"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttom_orange"
+            android:gravity="center"
+            android:text="="
+            android:textColor="#fff"
+            android:textSize="40dp" />
+    </GridLayout>
+
+
+</android.support.constraint.ConstraintLayout>
