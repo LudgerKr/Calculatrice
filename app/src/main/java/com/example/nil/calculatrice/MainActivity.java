@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+		
+		setTitle("Calculatrice");
 
         this.button0 = (Button) findViewById(R.id.id_0);
         this.button1 = (Button) findViewById(R.id.id_1);
@@ -282,6 +284,11 @@ public class MainActivity extends AppCompatActivity
         }
         if(operateur.equals("/"))
         {
+			if (Double.valueOf(ecran.getText().toString()).doubleValue() == 0.0) {
+				this.msg("Erreur : ","Division par zero impossible");
+				resetClick();
+				return;
+			}
             try{
                 chiffre1 = chiffre1 / Double.valueOf(ecran.getText().toString()).doubleValue();
                 ecran.setText(String.valueOf(chiffre1));
