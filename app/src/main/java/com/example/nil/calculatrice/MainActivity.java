@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-		
-		setTitle("Calculatrice");
 
         this.button0 = (Button) findViewById(R.id.id_0);
         this.button1 = (Button) findViewById(R.id.id_1);
@@ -68,85 +66,85 @@ public class MainActivity extends AppCompatActivity
         this.ecran = (TextView) findViewById(R.id.idtext);
 
         this.buttonPlus.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        plusClick();
-    }
-});
+            public void onClick(View v) {
+                plusClick();
+            }
+        });
         this.buttonMoins.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        moinsClick();
-    }
-});
+            public void onClick(View v) {
+                moinsClick();
+            }
+        });
         this.buttonDiv.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        divClick();
-    }
-});
+            public void onClick(View v) {
+                divClick();
+            }
+        });
         this.buttonMul.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        mulClick();
-    }
-});
+            public void onClick(View v) {
+                mulClick();
+            }
+        });
         this.buttonAC.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        resetClick();
-    }
-});
+            public void onClick(View v) {
+                resetClick();
+            }
+        });
         this.buttonEgal.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        egalClick();
-    }
-});
+            public void onClick(View v) {
+                egalClick();
+            }
+        });
         this.buttonPoint.setOnClickListener(new View.OnClickListener() {public void onClick(View v){chiffreClick(".");}});
-        this.buttonNegatif.setOnClickListener(new View.OnClickListener() {public void onClick(View v){chiffreClick("-");}});
-        this.buttonpourcentage.setOnClickListener(new View.OnClickListener() {public void onClick(View v){chiffreClick("%");}});
+        this.buttonNegatif.setOnClickListener(new View.OnClickListener() {public void onClick(View v){PlusMoinsClick();}});
+        this.buttonpourcentage.setOnClickListener(new View.OnClickListener() {public void onClick(View v){PourcentClick();}});
         this.button0.setOnClickListener(new View.OnClickListener() {public void onClick(View v) {chiffreClick("0");}});
         this.button1.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        chiffreClick("1");
-    }
-});
+            public void onClick(View v) {
+                chiffreClick("1");
+            }
+        });
         this.button2.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        chiffreClick("2");
-    }
-});
+            public void onClick(View v) {
+                chiffreClick("2");
+            }
+        });
         this.button3.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        chiffreClick("3");
-    }
-});
+            public void onClick(View v) {
+                chiffreClick("3");
+            }
+        });
         this.button4.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        chiffreClick("4");
-    }
-});
+            public void onClick(View v) {
+                chiffreClick("4");
+            }
+        });
         this.button5.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        chiffreClick("5");
-    }
-});
+            public void onClick(View v) {
+                chiffreClick("5");
+            }
+        });
         this.button6.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        chiffreClick("6");
-    }
-});
+            public void onClick(View v) {
+                chiffreClick("6");
+            }
+        });
         this.button7.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        chiffreClick("7");
-    }
-});
+            public void onClick(View v) {
+                chiffreClick("7");
+            }
+        });
         this.button8.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        chiffreClick("8");
-    }
-});
+            public void onClick(View v) {
+                chiffreClick("8");
+            }
+        });
         this.button9.setOnClickListener(new View.OnClickListener() {
-    public void onClick(View v) {
-        chiffreClick("9");
+            public void onClick(View v) {
+                chiffreClick("9");
+            }
+        });
     }
-});
-}
 
 
     private boolean thereAreVirgule()   {
@@ -182,6 +180,20 @@ public class MainActivity extends AppCompatActivity
             }
             ecran.setText(str);
         }
+    }
+    public void PourcentClick()
+    {
+        operateur = "%";
+        calcul();
+        ecran.setText(String.valueOf(chiffre1));
+        update = true;
+    }
+    public void PlusMoinsClick()
+    {
+        operateur = "+/-";
+        calcul();
+        ecran.setText(String.valueOf(chiffre1));
+        update = true;
     }
     public void plusClick()
     {
@@ -284,17 +296,33 @@ public class MainActivity extends AppCompatActivity
         }
         if(operateur.equals("/"))
         {
-			if (Double.valueOf(ecran.getText().toString()).doubleValue() == 0.0) {
-				this.msg("Erreur : ","Division par zero impossible");
-				resetClick();
-				return;
-			}
+            if (Double.valueOf(ecran.getText().toString()).doubleValue() == 0.0) {
+                this.msg("Erreur : ","Division par zero impossible");
+                resetClick();
+                return;
+            }
             try{
                 chiffre1 = chiffre1 / Double.valueOf(ecran.getText().toString()).doubleValue();
                 ecran.setText(String.valueOf(chiffre1));
             }catch(ArithmeticException e){
                 ecran.setText("0");
             }
+        }
+        if(operateur.equals("%")) {
+            if (ecran.getText().toString().equals("")) {
+                chiffre1 = chiffre1 / 100;
+            } else {
+                chiffre1 = Double.valueOf(ecran.getText().toString()) / 100;
+            }
+            ecran.setText(String.valueOf(chiffre1));
+        }
+        if(operateur.equals("+/-")) {
+            if (ecran.getText().toString().equals("")) {
+                chiffre1 = chiffre1 * (-1);
+            } else {
+                chiffre1 = Double.valueOf(ecran.getText().toString()) * (-1);
+            }
+            ecran.setText(String.valueOf(chiffre1));
         }
     }
     private void msg(String title, String msg)  {
